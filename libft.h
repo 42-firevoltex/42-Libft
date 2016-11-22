@@ -6,7 +6,7 @@
 /*   By: jgengo <jgengo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:38:37 by jgengo            #+#    #+#             */
-/*   Updated: 2016/11/12 10:00:00 by jgengo           ###   ########.fr       */
+/*   Updated: 2016/11/22 16:21:40 by jgengo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,10 @@ char				*ft_itoa(int n);
 char				*ft_strtrim(char const *s);
 
 char				**ft_strsplit(char const *s, char c);
+
+char				*ft_strndup(const char *s, size_t len);
+char				*ft_strcdup(const char *s, char c);
+int					ft_strclen(const char *s, char c);
 
 int					ft_isupper(int c);
 int					ft_islower(int c);
