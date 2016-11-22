@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgengo <jgengo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 23:14:42 by jgengo            #+#    #+#             */
-/*   Updated: 2016/11/22 15:10:17 by jgengo           ###   ########.fr       */
+/*   Created: 2016/11/22 15:11:48 by jgengo            #+#    #+#             */
+/*   Updated: 2016/11/22 15:33:45 by jgengo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
+size_t			ft_strclen(const char *str, char c)
 {
 	size_t i;
 
 	i = 0;
-	while (src[i] && i < len)
-	{
-		dst[i] = src[i];
+	while (str[i] && str[i] != c)
 		i++;
-	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (i);
 }

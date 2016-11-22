@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgengo <jgengo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 23:14:42 by jgengo            #+#    #+#             */
-/*   Updated: 2016/11/22 15:10:17 by jgengo           ###   ########.fr       */
+/*   Created: 2016/11/22 15:03:52 by jgengo            #+#    #+#             */
+/*   Updated: 2016/11/22 16:21:10 by jgengo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
+char		*ft_strcdup(const char *s, char c)
 {
-	size_t i;
+	char *copy;
 
-	i = 0;
-	while (src[i] && i < len)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	copy = ft_strndup(s, ft_strclen(s, c));
+	return (copy);
 }
