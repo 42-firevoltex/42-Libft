@@ -6,7 +6,7 @@
 /*   By: jgengo <jgengo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:38:37 by jgengo            #+#    #+#             */
-/*   Updated: 2016/11/22 16:21:40 by jgengo           ###   ########.fr       */
+/*   Updated: 2016/12/01 11:30:07 by jgengo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,10 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *nw);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstaddnext(t_list *lst, t_list *elm);
 
 size_t				ft_strlen(const char *str);
-size_t				ft_strlen_nb(unsigned int n);
+size_t				ft_intlen(unsigned int n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 unsigned int		ft_abs(int nb);
 

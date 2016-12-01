@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstaddnext.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgengo <jgengo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 10:39:57 by jgengo            #+#    #+#             */
-/*   Updated: 2016/12/01 11:29:51 by jgengo           ###   ########.fr       */
+/*   Created: 2016/12/01 10:03:55 by jgengo            #+#    #+#             */
+/*   Updated: 2016/12/01 10:17:47 by jgengo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+void		ft_lstaddnext(t_list *lst, t_list *elm)
 {
-	char			*ret;
-	size_t			len;
-	int				sign;
-	unsigned int	nb;
-
-	sign = (n < 0) ? 1 : 0;
-	nb = ft_abs(n);
-	len = ft_intlen(nb) + sign;
-	ret = (char *)malloc(sizeof(char) * len + 1);
-	if (ret == NULL)
-		return (NULL);
-	ret[len] = '\0';
-	while (len-- > (unsigned int)sign)
+	while (lst->next != NULL)
 	{
-		ret[len] = nb % 10 + '0';
-		nb /= 10;
+		lst = lst->next;
 	}
-	if (sign == 1)
-		ret[len] = '-';
-	return (ret);
+	lst->next = elm;
 }
